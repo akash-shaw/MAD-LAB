@@ -1,0 +1,34 @@
+# Android / Gradle
+.gradle/
+build/
+*/build/
+**/build/
+
+# Android Studio
+.idea/
+*.iml
+*.hprof
+local.properties
+
+# Kotlin / Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+
+# Android debug files
+*.apk
+*.ap_ 
+*.aab
