@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#222222">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello TableLayout"
+        android:padding="10dp"
+        android:background="#666666"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"> <TableRow android:padding="10dp">
+        <TextView android:text="Open..." android:textColor="#CCCCCC"/>
+        <TextView android:text="" /> <TextView android:text="Ctrl-O" android:textColor="#CCCCCC"/>
+    </TableRow>
+
+        <View android:layout_height="1dp" android:background="#444444"/>
+
+        <TableRow android:padding="10dp">
+            <TextView android:text="Save..." android:textColor="#CCCCCC"/>
+            <TextView android:text="" />
+            <TextView android:text="Ctrl-S" android:textColor="#CCCCCC"/>
+        </TableRow>
+
+        <View android:layout_height="1dp" android:background="#444444"/>
+
+        <TableRow android:padding="10dp">
+            <TextView android:text="Save As..." android:textColor="#CCCCCC"/>
+            <TextView android:text="" />
+            <TextView android:text="Ctrl-Shift-S" android:textColor="#CCCCCC"/>
+        </TableRow>
+
+        <View android:layout_height="1dp" android:background="#FFFFFF"/>
+
+        <TableRow android:padding="10dp">
+            <TextView android:text="X Import..." android:textColor="#CCCCCC"/>
+        </TableRow>
+
+        <TableRow android:padding="10dp">
+            <TextView android:text="X Export..." android:textColor="#CCCCCC"/>
+            <TextView android:text="" />
+            <TextView android:text="Ctrl-E" android:textColor="#CCCCCC"/>
+        </TableRow>
+
+        <View android:layout_height="1dp" android:background="#FFFFFF"/>
+
+        <TableRow android:padding="10dp">
+            <TextView android:text="Quit" android:textColor="#CCCCCC"/>
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
