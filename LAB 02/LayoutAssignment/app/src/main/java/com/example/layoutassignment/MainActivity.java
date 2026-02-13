@@ -10,9 +10,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Scenario 1: Load the Linear Layout (Left Image)
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
 
         // Scenario 2: To see the Relative Layout (Right Image),
-        // setContentView(R.layout.activity_form);
+         setContentView(R.layout.activity_form);
     }
 }

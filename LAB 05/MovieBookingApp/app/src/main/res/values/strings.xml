@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MovieBookingApp</string>
+    <string-array name="movies_array">
+        <item>Select Movie</item>
+        <item>Inception</item>
+        <item>The Dark Knight</item>
+        <item>Interstellar</item>
+    </string-array>
+    <string-array name="theatres_array">
+        <item>Select Theatre</item>
+        <item>IMAX Central</item>
+        <item>PVR Cinemas</item>
+        <item>Regal Movies</item>
+    </string-array>
+</resources>
