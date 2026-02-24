@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Movie Name" />
+
+    <EditText
+        android:id="@+id/etYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Year" />
+
+    <EditText
+        android:id="@+id/etRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Rating (1-5)" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Review" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Movie List (Tap to view details):"
+        android:textStyle="bold"
+        android:paddingTop="10dp"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selected Movie Details:"
+        android:textStyle="bold"
+        android:paddingTop="10dp"/>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <TableRow>
+            <TextView android:text="Name:" android:textStyle="bold" android:padding="5dp"/>
+            <TextView android:id="@+id/tvDetailName" android:text="-" android:padding="5dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="Year:" android:textStyle="bold" android:padding="5dp"/>
+            <TextView android:id="@+id/tvDetailYear" android:text="-" android:padding="5dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="Rating:" android:textStyle="bold" android:padding="5dp"/>
+            <TextView android:id="@+id/tvDetailRating" android:text="-" android:padding="5dp"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
