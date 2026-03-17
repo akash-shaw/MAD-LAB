@@ -1,0 +1,677 @@
+findViewById(R.id.blahblah)
+
+setOnClickListener{ v -> { });
+
+Logging -> Log.d(TAG,text_msg)
+Toast (pop up) -> Toast.makeText(this, text_msg, Toast.Length_SHORT).show();
+
+Intent intent = new Intent(this, SecondActivity.class);
+startActivity(intent);
+
+onSaveInstanceState(Bundle out){
+	super.
+	out.putString("saved_text",data);
+}
+
+savedInstanceState.getString("saved_text");
+
+getIntent
+.putExtra
+.getIntExtra
+.getStringExtra(key,default);
+
+startActivityForResult(intent,REQUEST_CODE)
+onActivityResult(int requestCode, int resultCode, Intent data){
+super
+if (requestcode==REQUEST_CODE)
+	if(resultCode== RESULT_OK)
+		data.getStringExtra
+	RESULT_CANCELLED
+new Intent()
+setResult(RESULT_OK, intenty)
+finish()
+
+Intent.ACTION_VIEW, ACTION_DIAL, ACTION_SENDTO
+Uri.parse(URL);
+
+ArrayAdapter<String> adapter = new ArrayAdapter<>(this, 
+android.R.layout.simple_list_item_1, 
+items); 
+.setAdapter(adapter)
+gridView
+listView
+
+setOnItemClickListener(new AdapterView.OnItemClickListener() { @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id){ } });
+
+convertView = LayoutInflater.from(context)
+                .inflate(R.layout.list_item_sport, parent, false);
+
+
+layouts:- match_parent, warp_content
+Linear:- android:orientation="vertical" "horizontal"
+Relative:- layout_centerVertical, layout_toLeftOf and all. Layout_marginTop, layout_below. layout_alignParentTop/Bottom/Left/Right
+layout_centerInParent above/below
+
+Constraint:- layout_constraintBottom_toBottomOf
+Table:-  tablerow view android:stretchcolumns
+
+
+
+
+TabLayout tabLayout = findViewById(R.id.tabLayout); 
+        ViewPager viewPager = findViewById(R.id.viewPager); 
+ 
+        viewPager.setAdapter(new 
+FragmentPagerAdapter(getSupportFragmentManager())  { 
+            @Override 
+            public Fragment getItem(int position) { 
+                switch (position) { 
+                    case 0: 
+                        return new TabFragment("Tab 1 Content"); 
+                    case 1: 
+                        return new TabFragment("Tab 2 Content"); 
+                    default: 
+                        return new TabFragment("Tab 3 Content"); 
+                } 
+            } 
+ 
+            @Override 
+            public int getCount() { 
+                return 3; // Number of tabs 
+            } 
+ 
+            @Override 
+            public CharSequence getPageTitle(int position) { 
+                return "Tab " + (position + 1); 
+            } 
+        }); 
+
+
+toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                // Toggle is ON
+                imageView.setImageResource(android.R.drawable.presence_online);
+                textViewStatus.setText("Current Mode: Wi-Fi ON");
+                Toast.makeText(this, "Wi-Fi Turned ON", Toast.LENGTH_SHORT).show();
+            } else {
+                // Toggle is OFF
+                imageView.setImageResource(android.R.drawable.presence_offline);
+                textViewStatus.setText("Current Mode: Wi-Fi OFF");
+                Toast.makeText(this, "Wi-Fi Turned OFF", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+LayoutInflater inflater = getLayoutInflater();
+View layout = inflater.inflate(R.layout.custom_toast, 
+                               findViewById(R.id.toast_layout_root));
+
+Toast customToast = new Toast(getApplicationContext());
+customToast.setDuration(Toast.LENGTH_LONG);
+customToast.setView(layout);
+customToast.show();
+
+
+checkbox.isChecked()
+
+radioGroupGender.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radioMale) {
+                Toast.makeText(this, "Gender: Male selected", Toast.LENGTH_SHORT).show();
+            } else if (checkedId == R.id.radioFemale) {
+                Toast.makeText(this, "Gender: Female selected", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+int selectedGenderId = radioGroupGender.getCheckedRadioButtonId();
+
+seekBarVolume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textViewVolume.setText("Volume: " + progress + "%");
+            }
+            
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // Called when user starts touching
+                Toast.makeText(MainActivity.this, "Adjusting volume...", 
+                              Toast.LENGTH_SHORT).show();
+            }
+            
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // Called when user stops touching
+                Toast.makeText(MainActivity.this, 
+                              "Volume set to " + seekBar.getProgress() + "%", 
+                              Toast.LENGTH_SHORT).show();
+            }
+        });
+
+onProgressChanged(), onStartTrackingTouch(), onStopTrackingTouch()
+
+
+
+ArrayAdapter<String> adapter = new ArrayAdapter<>(
+            this,
+            android.R.layout.simple_spinner_item,  // Layout for spinner closed state
+            vehicles
+        );
+        
+        // Set dropdown layout
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        
+        // Set adapter to spinner
+        spinnerVehicle.setAdapter(adapter);
+        
+        // Set default selection (optional)
+        spinnerVehicle.setSelection(0);
+        
+        // Handle spinner item selection
+        spinnerVehicle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedVehicle = parent.getItemAtPosition(position).toString();
+                
+                if (position == 0) {
+                    // First item (prompt) - don't show toast
+                    selectedVehicle = null;
+                } else {
+                    Toast.makeText(MainActivity.this, 
+                                  "Selected: " + selectedVehicle, 
+                                  Toast.LENGTH_SHORT).show();
+                }
+            }
+            
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                selectedVehicle = null;
+            }
+        });
+
+
+// Create ArrayAdapter
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+            this,
+            android.R.layout.simple_spinner_item,  // Layout for spinner closed state
+            vehicles
+        );
+        
+        // Set dropdown layout
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        
+        // Set adapter to spinner
+        spinnerVehicle.setAdapter(adapter);
+        
+        // Set default selection (optional)
+        spinnerVehicle.setSelection(0);
+        
+        // Handle spinner item selection
+        spinnerVehicle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedVehicle = parent.getItemAtPosition(position).toString();
+                
+                if (position == 0) {
+                    // First item (prompt) - don't show toast
+                    selectedVehicle = null;
+                } else {
+                    Toast.makeText(MainActivity.this, 
+                                  "Selected: " + selectedVehicle, 
+                                  Toast.LENGTH_SHORT).show();
+                }
+            }
+            
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                selectedVehicle = null;
+            }
+        });
+
+
+calendar = Calendar.getInstance();
+        dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        timeFormat = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+        
+        // Display current date and time
+        updateDateDisplay();
+        updateTimeDisplay();
+        
+        btnSelectDate.setOnClickListener(v -> showDatePicker());
+        btnSelectTime.setOnClickListener(v -> showTimePicker());
+    }
+    
+    private void showDatePicker() {
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+            this,
+            (view, selectedYear, selectedMonth, selectedDay) -> {
+                // Set the selected date to calendar
+                calendar.set(Calendar.YEAR, selectedYear);
+                calendar.set(Calendar.MONTH, selectedMonth);
+                calendar.set(Calendar.DAY_OF_MONTH, selectedDay);
+                
+                // Update display
+                updateDateDisplay();
+                
+            },
+            year, month, day
+        );
+        
+        // Optional: Set min and max date
+        // datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+        
+        datePickerDialog.show();
+    }
+    
+    private void showTimePicker() {
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        
+        TimePickerDialog timePickerDialog = new TimePickerDialog(
+            this,
+            (view, hourOfDay, minuteOfHour) -> {
+                // Set the selected time to calendar
+                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                calendar.set(Calendar.MINUTE, minuteOfHour);
+                
+                // Update display
+                updateTimeDisplay();
+                
+            },
+            hour, minute, false  // false = 12-hour format, true = 24-hour format
+        );
+        
+        timePickerDialog.show();
+    }
+
+
+float context menu
+Steps to Implement: 
+1. Register the view for the context menu. 
+2. Override methods to create and handle the menu. 
+Java Code Example: 
+@Override 
+protected void onCreate(Bundle savedInstanceState) { 
+super.onCreate(savedInstanceState); 
+setContentView(R.layout.activity_main); 
+// Register the view for the context menu 
+View view = findViewById(R.id.my_view); 
+registerForContextMenu(view); 
+} 
+// Create the context menu 
+@Override 
+public void onCreateContextMenu(ContextMenu menu, View v, 
+ContextMenu.ContextMenuInfo menuInfo) { 
+40 
+MOBILE APPLICATION DEVELOPMENT LAB MANUAL 
+41 
+ 
+    super.onCreateContextMenu(menu, v, menuInfo); 
+    getMenuInflater().inflate(R.menu.context_menu, menu); 
+} 
+ 
+// Handle context menu item clicks 
+@Override 
+public boolean onContextItemSelected(MenuItem item) { 
+    switch (item.getItemId()) { 
+        case R.id.action_edit: 
+            // Handle edit action 
+            return true; 
+        case R.id.action_delete: 
+            // Handle delete action 
+            return true; 
+        default: 
+            return super.onContextItemSelected(item); 
+    } 
+} 
+Changes Needed:Define a context_menu.xml in the res/menu/ directory and 
+Register the view using registerForContextMenu(). 
+<menu xmlns:android="http://schemas.android.com/apk/res/android"> 
+    <item android:id="@+id/action_edit" android:title="Edit" /> 
+    <item android:id="@+id/action_delete" android:title="Delete" /> 
+</menu> 
+
+
+contextual action mode
+Steps to Implement: 
+• Start ActionMode when an item is selected. 
+• Inflate and handle the menu in ActionMode.Callback. 
+ 
+Java code Example: 
+@Override 
+protected void onCreate(Bundle savedInstanceState) { 
+    super.onCreate(savedInstanceState); 
+    setContentView(R.layout.activity_main); 
+ 
+    // Example ListView setup 
+    ListView listView = findViewById(R.id.my_list); 
+    listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL); 
+ 
+    // Set MultiChoiceModeListener for the ListView 
+    listView.setMultiChoiceModeListener(new 
+AbsListView.MultiChoiceModeListener() { 
+        @Override 
+        public void onCreateActionMode(ActionMode mode, Menu menu) { 
+            mode.getMenuInflater().inflate(R.menu.contextual_action_menu, 
+menu); 
+        } 
+ 
+        @Override 
+        public void onItemCheckedStateChanged(ActionMode mode, int 
+position, long id, boolean checked) { 
+            // Update the number of selected items, if needed 
+        } 
+ 
+        @Override 
+        public boolean onPrepareActionMode(ActionMode mode, Menu menu) { 
+            return false; 
+        } 
+ 
+        @Override 
+        public boolean onActionItemClicked(ActionMode mode, MenuItem item) 
+{ 
+            switch (item.getItemId()) { 
+                case R.id.action_delete: 
+                    // Perform delete action 
+                    mode.finish(); // Close the action mode 
+                    return true; 
+                default: 
+MOBILE APPLICATION DEVELOPMENT LAB MANUAL 
+43 
+ 
+                    return false; 
+            } 
+        } 
+ 
+        @Override 
+        public void onDestroyActionMode(ActionMode mode) { 
+            // Cleanup when the action mode is closed 
+        } 
+    }); 
+} 
+Main Changes Needed: Define a contextual_action_menu.xml in the res/menu/ 
+directory:  
+<menu 
+xmlns:android="http://schemas.android.com/apk/res/android"> 
+    <item android:id="@+id/action_delete" 
+          android:title="Delete" 
+          android:icon="@drawable/ic_delete" 
+          android:showAsAction="ifRoom" /> 
+</menu>
+
+
+popup menu
+If you define your menu in XML then: 
+1. Instantiate a PopupMenu with its constructor, which takes the 
+current application Context and the View to which the menu should be 
+anchored. 
+2. Use MenuInflater to inflate your menu resource into the Menu object 
+returned by PopupMenu.getMenu(). 
+3.  Call PopupMenu.show(). 
+ 
+ 
+Java Code Example: 
+package com.example.popupmenudemo; 
+import android.os.Bundle; 
+import android.view.MenuInflater; 
+import android.view.MenuItem; 
+import android.widget.Toast; 
+import android.widget.Button; 
+import android.widget.PopupMenu; 
+import androidx.appcompat.app.AppCompatActivity; 
+ 
+public class MainActivity extends AppCompatActivity { 
+ 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+ 
+        // Reference to the Button that triggers the PopupMenu 
+        Button popupButton = findViewById(R.id.popupButton); 
+ 
+        // Set a click listener to show the PopupMenu 
+        popupButton.setOnClickListener(view -> { 
+            // Step 1: Instantiate PopupMenu with Context and the anchor View 
+            PopupMenu popupMenu = new PopupMenu(MainActivity.this, view); 
+ 
+            // Step 2: Inflate the menu resource into the PopupMenu 
+            MenuInflater inflater = popupMenu.getMenuInflater(); 
+            inflater.inflate(R.menu.popup_menu, popupMenu.getMenu()); 
+ 
+            // Step 3: Set click listener for menu item selection 
+            popupMenu.setOnMenuItemClickListener(item -> { 
+                switch (item.getItemId()) { 
+                    case R.id.option_one: 
+                        Toast.makeText(MainActivity.this, "Option One Selected", 
+Toast.LENGTH_SHORT).show(); 
+                        return true; 
+                    case R.id.option_two: 
+                        Toast.makeText(MainActivity.this, "Option Two Selected", 
+Toast.LENGTH_SHORT).show(); 
+                        return true; 
+                    case R.id.option_three: 
+MOBILE APPLICATION DEVELOPMENT LAB MANUAL 
+45 
+ 
+                        Toast.makeText(MainActivity.this, "Option Three Selected", 
+Toast.LENGTH_SHORT).show(); 
+                        return true; 
+                    default: 
+                        return false; 
+                } 
+            }); 
+ 
+            // Step 4: Display the PopupMenu 
+            popupMenu.show(); 
+        }); 
+    } 
+} 
+ 
+XML Files:res/layout/activity_main.xml 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout 
+xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    android:padding="16dp"> 
+ 
+    <Button 
+        android:id="@+id/popupButton" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:text="Show Popup Menu" 
+        android:layout_centerInParent="true" /> 
+</RelativeLayout> 
+res/menu/popup_menu.xml 
+<?xml version="1.0" encoding="utf-8"?> 
+<menu xmlns:android="http://schemas.android.com/apk/res/android"> 
+    <item 
+        android:id="@+id/option_one" 
+        android:title="Option One" /> 
+    <item 
+        android:id="@+id/option_two" 
+        android:title="Option Two" /> 
+    <item 
+        android:id="@+id/option_three" 
+        android:title="Option Three" /> 
+</menu> 
+
+
+SQLLITE & SHARED PREFERENCES
+Android SQLite 
+SQLite is an open-source relational database i.e. used to perform database operations on 
+android devices such as storing, manipulating or retrieving persistent data from the 
+database. It is a lightweight, open-source relational database engine that is built into 
+Android. It is used for storing structured data locally on the device. Android provides a set 
+of APIs to work with SQLite databases, enabling developers to create, query, update, and 
+manage data for their applications. It provides SQLiteOpenHelper to simplify database 
+management. 
+Here, we are going to see the example of sqlite to store and fetch the data. Data is 
+displayed in the logcat. 
+ 
+1. Creating a Database and Table 
+ 
+SQLite databases in Android are created and managed using the SQLiteOpenHelper class. 
+Example:  
+     public class MyDatabaseHelper extends SQLiteOpenHelper { 
+    private static final String DATABASE_NAME = "MyDatabase.db"; 
+    private static final int DATABASE_VERSION = 1; 
+ 
+    // SQL command to create a table 
+    private static final String CREATE_TABLE =  
+        "CREATE TABLE Users (" + 
+        "id INTEGER PRIMARY KEY AUTOINCREMENT, " + 
+        "name TEXT NOT NULL, " + 
+        "email TEXT UNIQUE);"; 
+ 
+    public MyDatabaseHelper(Context context) { 
+        super(context, DATABASE_NAME, null, DATABASE_VERSION); 
+    } 
+ 
+    @Override 
+    public void onCreate(SQLiteDatabase db) { 
+        db.execSQL(CREATE_TABLE); // Create the table 
+    } 
+ 
+    @Override 
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { 
+        db.execSQL("DROP TABLE IF EXISTS Users"); // Drop old table 
+MOBILE APPLICATION DEVELOPMENT LAB MANUAL 
+48 
+ 
+        onCreate(db); // Recreate the table 
+    } 
+} 
+ 
+2. Inserting Data 
+To insert data into the database, use the insert() method or raw SQL. 
+Using ContentValues: 
+SQLiteDatabase db = dbHelper.getWritableDatabase(); 
+ContentValues values = new ContentValues(); 
+values.put("name", "John Doe"); 
+values.put("email", "john.doe@example.com"); 
+long newRowId = db.insert("Users", null, values); // Returns row ID 
+ 
+Using Raw SQL: 
+ 
+db.execSQL("INSERT INTO Users (name, email) VALUES ('Jane Doe', 'jane.doe@example.com');"); 
+ 
+3. Querying Data 
+To retrieve data, use the query() method or raw SQL with rawQuery(). 
+Using query(): 
+    Cursor cursor = db.query( 
+    "Users",                    // Table name 
+    new String[]{"id", "name"}, // Columns to retrieve 
+    "email = ?",                // WHERE clause 
+    new String[]{"john.doe@example.com"}, // Arguments 
+    null, null, null            // GroupBy, Having, OrderBy 
+); 
+ 
+while (cursor.moveToNext()) { 
+    int id = cursor.getInt(cursor.getColumnIndexOrThrow("id")); 
+    String name = cursor.getString(cursor.getColumnIndexOrThrow("name")); 
+    // Use retrieved data 
+} 
+cursor.close(); 
+Using Raw SQL: 
+Cursor cursor = db.rawQuery("SELECT * FROM Users WHERE email = ?",  
+                            new String[]{"john.doe@example.com"}); 
+ 
+4. Updating Data 
+To update data, use the update() method or raw SQL. 
+Using update(): 
+ContentValues values = new ContentValues(); 
+values.put("name", "John Smith"); 
+int rowsAffected = db.update("Users", values, "email = ?", new 
+String[]{"john.doe@example.com"}); 
+MOBILE APPLICATION DEVELOPMENT LAB MANUAL 
+Using Raw SQL: 
+db.execSQL("UPDATE Users SET name = 'John Smith' WHERE email = 
+'john.doe@example.com';"); 
+5. Deleting Data 
+To delete data, use the delete() method or raw SQL. 
+Using delete(): 
+int rowsDeleted = db.delete("Users", "email = ?", new String[]{"john.doe@example.com"}); 
+Using Raw SQL: 
+db.execSQL("DELETE FROM Users WHERE email = 'john.doe@example.com';"); 
+6. Closing the Database 
+Always close the database when you are done to release resources. 
+db.close(); 
+To view the SQLite database in an Android application 
+Use Android Device Monitor (for older Android Studio versions) 
+Steps: 
+1. Open Android Studio. 
+2. Run your application on an emulator or a physical device. 
+3. Go to Tools > Device File Explorer. 
+4. Navigate to the database location: 
+o Path: /data/data/<your.package.name>/databases/ 
+5. Locate your database file (e.g., DemoDB). 
+6. Right-click the database file and select Save As to download it to your computer. 
+7. Use an SQLite viewer (e.g., DB Browser for SQLite) to open and view the database. 
+Use Device File Explorer (for newer Android Studio versions) 
+Steps: 
+1. Open Android Studio. 
+2. Open View > Tool Windows > Device File Explorer. 
+3. In the Device File Explorer, navigate to: 
+o /data/data/<your.package.name>/databases/ 
+4. Find your database file. 
+5. Right-click the database and choose Save As to export it to your computer. 
+6. Use an external SQLite viewer to inspect the database. 
+Shared Preferences in Android 
+What Are Shared Preferences? 
+Shared Preferences in Android provide a simple way to store small amounts of data as 
+key-value pairs. This data is persistent, meaning it remains available even after the app is 
+closed or the device is restarted. 
+49 
+MOBILE APPLICATION DEVELOPMENT LAB MANUAL 
+Shared Preferences are typically used for saving application preferences, user settings, or 
+lightweight data that does not require a full database. 
+When to Use Shared Preferences 
+• User Preferences: Storing user-selected settings like themes (dark/light mode), 
+notification preferences, or language selection. 
+• Login State: Maintaining login sessions, such as storing a boolean flag to check if 
+the user is logged in. 
+• Configuration Flags: Saving configuration flags like the first-time launch state 
+(isFirstLaunch). 
+• Caching Small Data: Temporarily storing small data that does not require a 
+database. 
+Working with Shared Preferences 
+1. File Storage:  
+o Shared Preferences are stored as an XML file in the app's private directory 
+(/data/data/<package_name>/shared_prefs). 
+2. Data Access:  
+o Data is accessed using a unique key, and updates are managed through 
+SharedPreferences.Editor. 
+Syntax and Usage: 
+1. Initialize Shared Preferences 
+SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", 
+Context.MODE_PRIVATE); 
+2. Save Data 
+SharedPreferences.Editor editor = sharedPreferences.edit(); 
+editor.putString("username", "JohnDoe"); 
+editor.putBoolean("isLoggedIn", true); 
+editor.putInt("age", 30); 
+editor.apply(); // Save changes asynchronously 
+3. Retrieve Data 
+String username = sharedPreferences.getString("username", "DefaultUser"); 
+boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false); 
+int age = sharedPreferences.getInt("age", 0); 
+4. Remove Data 
+SharedPreferences.Editor editor = sharedPreferences.edit(); 
+editor.remove("username"); // Remove a specific key 
+editor.apply(); 
+5. Clear All Data 
+SharedPreferences.Editor editor = sharedPreferences.edit(); 
+editor.clear(); // Clear all stored preferences 
+editor.apply(); 
+50 
+MOBILE APPLICATION DEVELOPMENT LAB MANUAL 
+When Not to Use Shared Preferences 
+• For complex or relational data. 
+• For storing large files, such as media or JSON. 
+• For sharing data between different applications.
+
