@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 1. Button -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1. Button &amp; Enable/Disable" android:textStyle="bold" />
+        <Button android:id="@+id/btnTest" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Normal Button" />
+        <Button android:id="@+id/btnToggleEnable" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Enable/Disable Button Above" />
+        <Button android:id="@+id/btnToggleVisibility" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Show/Hide Button Above" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 2. EditText (TextBox) -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2. TextBox (EditText)" android:textStyle="bold" />
+        <EditText android:id="@+id/etInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Type text here..." android:inputType="text" />
+        <EditText android:id="@+id/etNumber" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Number field" android:inputType="number" />
+        <Button android:id="@+id/btnTextActions" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Get/Set Text &amp; Toggle Enable" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 3. SeekBar -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3. SeekBar (Limits: 0-200)" android:textStyle="bold" />
+        <TextView android:id="@+id/tvSeekVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Progress: 50" />
+        <SeekBar android:id="@+id/seekBar" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 4. CheckBox -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4. CheckBox" android:textStyle="bold" />
+        <CheckBox android:id="@+id/checkBox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check Status" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 5. ToggleButton & Switch -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5. Toggle &amp; Switch" android:textStyle="bold" />
+        <ToggleButton android:id="@+id/toggleButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textOn="LIVE" android:textOff="OFFLINE" />
+        <Switch android:id="@+id/switchTest" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Master Switch" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 6. Radio Group -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6. Radio Group (Select One)" android:textStyle="bold" />
+        <RadioGroup android:id="@+id/radioGroup" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/rb1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Option 1" />
+            <RadioButton android:id="@+id/rb2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Option 2" />
+        </RadioGroup>
+        <Button android:id="@+id/btnResetRadio" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Reset Radio Selection" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 7. Utils -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7. Utilities" android:textStyle="bold" />
+        <Button android:id="@+id/btnToast" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Show Toast" />
+        <Button android:id="@+id/btnDialog" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Show Confirmation Dialog" />
+        <Button android:id="@+id/btnBack" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Go Back (Back Button)" />
+
+    </LinearLayout>
+</ScrollView>

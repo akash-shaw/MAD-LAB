@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 1. Hardcoded Table (Original) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Static Table (Hardcoded)"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:layout_marginBottom="24dp">
+
+            <TableRow android:padding="4dp">
+                <TextView android:text="ID" android:textStyle="bold" />
+                <TextView android:text="Name" android:textStyle="bold" />
+                <TextView android:text="Age" android:textStyle="bold" />
+            </TableRow>
+
+            <View android:layout_height="1dp" android:background="#CCCCCC" />
+
+            <TableRow android:padding="4dp">
+                <TextView android:text="1" />
+                <TextView android:text="Alice" />
+                <TextView android:text="25" />
+            </TableRow>
+
+            <TableRow android:padding="4dp">
+                <TextView android:text="2" />
+                <TextView android:text="Bob" />
+                <TextView android:text="30" />
+            </TableRow>
+        </TableLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="2dp" android:background="#444" android:layout_marginBottom="24dp"/>
+
+        <!-- 2. SQLite Table (Dynamic) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Dynamic Table (SQLite Data)"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp" />
+
+        <TableLayout
+            android:id="@+id/displayTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <TableRow
+                android:background="#EEEEEE"
+                android:padding="8dp">
+                <TextView
+                    android:text="ID"
+                    android:textStyle="bold"
+                    android:padding="4dp" />
+                <TextView
+                    android:text="User Name"
+                    android:textStyle="bold"
+                    android:padding="4dp" />
+            </TableRow>
+            <!-- Dynamic rows added here -->
+        </TableLayout>
+
+    </LinearLayout>
+</ScrollView>

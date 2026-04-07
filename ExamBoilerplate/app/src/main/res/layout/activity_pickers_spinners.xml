@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 1. Basic Spinner -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Basic Spinner"
+            android:textStyle="bold" />
+        <Spinner
+            android:id="@+id/basicSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 2. Spinner with Images -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Spinner with Images (Custom Adapter)"
+            android:textStyle="bold" />
+        <Spinner
+            android:id="@+id/imageSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 3. Date Picker -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Date Picker (Restricted to Future)"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnDatePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Date" />
+        <TextView
+            android:id="@+id/tvSelectedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No date selected"
+            android:textColor="#555" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#DDD" android:layout_marginVertical="10dp"/>
+
+        <!-- 4. Time Picker -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4. Time Picker (Error handling)"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnTimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Time" />
+        <TextView
+            android:id="@+id/tvSelectedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No time selected"
+            android:textColor="#555" />
+
+    </LinearLayout>
+</ScrollView>

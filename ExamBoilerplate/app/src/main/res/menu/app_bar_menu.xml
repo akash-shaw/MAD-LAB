@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 0. Dehaze (Menu Icon) -->
+    <item
+        android:id="@+id/action_menu"
+        android:icon="@drawable/ic_dehaze"
+        android:title="Menu"
+        app:showAsAction="always" />
+
+    <!-- 1. Search: Always visible on the bar if there is room -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:showAsAction="always" />
+
+    <!-- 2. Share: Visible if there is room -->
+    <item
+        android:id="@+id/action_share"
+        android:icon="@drawable/ic_share"
+        android:title="Share"
+        app:showAsAction="ifRoom" />
+
+    <!-- 3. Settings: Always in the overflow (three-dot menu) -->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"
+        app:showAsAction="never" />
+
+    <!-- 4. Submenu Example -->
+    <item
+        android:id="@+id/action_more"
+        android:title="Help"
+        android:icon="@drawable/ic_help"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/sub_item1"
+                android:icon="@drawable/ic_info"
+                android:title="About App" />
+            <item
+                android:id="@+id/sub_item2"
+                android:icon="@drawable/ic_send"
+                android:title="Feedback" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_exit"
+        android:icon="@drawable/ic_exit"
+        android:title="Exit"
+        app:showAsAction="never" />
+</menu>
